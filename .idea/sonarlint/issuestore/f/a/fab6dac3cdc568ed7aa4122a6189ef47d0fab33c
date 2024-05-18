@@ -1,0 +1,16 @@
+
+
+java:S1192*"FDefine a constant instead of duplicating this literal "RCVD " 3 times.(â†¯¦ÿÿÿÿÿ8òµË½ø1J$1bfe89fc-0fbe-4df0-ac06-2ecf1b33f226
+r	java:S106*"+Replace this use of System.out by a logger.(â†¯¦ÿÿÿÿÿ8Ì¶Ë½ø1J$da2ff239-810a-43b8-bd86-4b18590fe21a
+m	java:S1065"+Replace this use of System.out by a logger.(ş¾Äî8Í¶Ë½ø1J$32f2f631-2721-47ff-a868-ba0b58354e75
+m	java:S1067"+Replace this use of System.out by a logger.(¯Öå¥8Í¶Ë½ø1J$f9b72a5f-d810-40b9-82de-01286547c94e
+m	java:S106>"+Replace this use of System.out by a logger.(îÇãÇ8Í¶Ë½ø1J$b3c00ffe-80af-427d-bdee-e9d57f9bc369
+r	java:S106C"+Replace this use of System.out by a logger.(Æè—¡ùÿÿÿÿ8Í¶Ë½ø1J$debf5ea6-c674-4427-8bd7-836f55d43bd5
+š
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Â³ºÿÿÿÿÿ8Ï¶Ë½ø1J$eeea85a2-7209-4681-949a-954904b2c259
+r	java:S106~"+Replace this use of System.out by a logger.(Æè—¡ùÿÿÿÿ8Ï¶Ë½ø1J$07e10def-775d-4c11-acf8-12f8d75c18d3
+n	java:S106’"+Replace this use of System.out by a logger.(ÿ—Ç‰8Ğ¶Ë½ø1J$d5fc4464-7977-4bd9-9642-f5e0d3146ae7
+s	java:S106›"+Replace this use of System.out by a logger.(İµšŞşÿÿÿÿ8Ğ¶Ë½ø1J$13751a2e-39d6-41c0-8f15-629f5a2b933e
+„
+java:S1119¸";Refactor the code to remove this label and the need for it.(ı™ÿúÿÿÿÿ8Ñ¶Ë½ø1J$aa2271b8-6f03-4f58-bba5-b7ac81ba71af
+m	java:S106Ì"+Replace this use of System.out by a logger.(Ÿ§æH8Ò¶Ë½ø1J$d21b953d-004b-445d-a33a-0709f7abbf57

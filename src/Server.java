@@ -1,39 +1,39 @@
-import java.io.*;
-import java.net.*;
 public class Server {
-    private ServerSocket ss;
-    private Socket client;
-    private PrintWriter output;
-    private BufferedReader input;
+    String type;
+    int id, maxCores, maxMemorySize, maxDiskSize, currentCores, currentMemorySize, currentDiskSize;
+    boolean isActive;
 
-    public void start(int port) throws IOException {
-        ss = new ServerSocket(port);
-        System.out.println("Server listing on port " + port);
-        client = ss.accept();
-        System.out.println("Client Connected");
-
-        output = new PrintWriter(client.getOutputStream(), true);
-        input = new BufferedReader(new InputStreamReader(client.getInputStream()));
-
-        String msg = input.readLine();
-        System.out.println("RCVD " + msg);
-
-        if ("HELO".equals(msg)) {
-            output.println("G'DAY");
-            System.out.println("SENT G'DAY");
-        }
-
-        msg = input.readLine();
-        System.out.println("RCVD " + msg);
-
-        if ("BYE".equals(msg)) {
-            output.println("BYE");
-            System.out.println("SENT BYE\nServer quitting...");
-        }
+    Server(String type, int id, int cores, int memorySize, int diskSize) {
+        this.type = type;
+        this.maxCores = cores;
+        this.id = id;
+        this.maxMemorySize = memorySize;
+        this.maxDiskSize = diskSize;
+        this.currentCores = cores;
+        this.currentMemorySize = memorySize;
+        this.currentDiskSize = diskSize;
+        this.isActive = false;
     }
 
-    public static void main(String[] args) throws IOException {
-        Server server =new Server();
-        server.start(4718);
+    void printServerDetails() {
+        System.out.println(type + " " + id + " " + maxCores + " " + maxMemorySize + " " + maxDiskSize);
+    }
+
+    void allocateResources(Job job) {
+        this.currentCores -= job.coreReq;
+        this.currentMemorySize -= job.memoryReq;
+        this.currentDiskSize -= job.diskReq;
+        isActive = true;
+    }
+
+    void deAllocateResources(Job job) {
+        this.currentCores += job.coreReq;
+        this.currentMemorySize += job.memoryReq;
+        this.currentDiskSize += job.diskReq;
+        isActive = currentCores < maxCores || currentMemorySize < maxMemorySize || currentDiskSize < maxDiskSize;;
+    }
+
+    public boolean canHandleJob(Job job) {
+        return job.coreReq <= currentCores && job.memoryReq <= currentMemorySize && job.diskReq <= currentDiskSize;
     }
 }
