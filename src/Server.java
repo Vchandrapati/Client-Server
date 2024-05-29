@@ -30,7 +30,7 @@ public class Server {
         this.currentCores += job.coreReq;
         this.currentMemorySize += job.memoryReq;
         this.currentDiskSize += job.diskReq;
-        isActive = currentCores < maxCores || currentMemorySize < maxMemorySize || currentDiskSize < maxDiskSize;;
+        isActive = currentCores < maxCores || currentMemorySize < maxMemorySize || currentDiskSize < maxDiskSize;
     }
 
     public boolean canHandleJob(Job job) {
